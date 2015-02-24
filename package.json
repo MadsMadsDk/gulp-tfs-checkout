@@ -1,0 +1,26 @@
+{
+  "name": "gulp-tfs-checkout",
+  "version": "1.0.0",
+  "description": "gulp-tfs-checkout",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test node test | colortape",
+    "test-cov": "NODE_ENV=test istanbul cover test.js",
+    "lint": "eslint ."
+  },
+  "repository": "madsmadsdk/gulp-tfs-checkout",
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "colortape": "^0.1.1",
+    "tape": "^3.5.0",
+    "istanbul": "^0.3.6",
+    "eslint": "^0.15.0"
+  },
+  "files": [
+    "LICENSE",
+    "index.js",
+    "README.md"
+  ]
+}
