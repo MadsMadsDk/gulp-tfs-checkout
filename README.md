@@ -38,16 +38,9 @@ gulp.task('default', ['checkout', '...', '...', '...']);
 
 ```
 
-## API
-```js
-
-```
-
 ## Why?
-
-
-## See Also
--
+I was tired of having to checkout files that were going to be manipulated manually.
+The npm package 'tfs-unlock' can't parse a directory, so I wrote this little plugin that can parse a directory, and performs the tfs-task on each file.
 
 ## License
 [MIT](https://tldrlegal.com/license/mit-license)

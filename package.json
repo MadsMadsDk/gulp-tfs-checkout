@@ -4,7 +4,7 @@
   "description": "Checkout and unlock files from TFS, so that gulp can modify the files without the EPERM error.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "jshint test/test.js && mocha"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,9 @@
     "tfs-unlock": "^0.3.1"
   },
   "devDependencies": {
-    "chai": "^1.0.0",
+    "coveralls": "^2.11.2",
     "jshint": "^2.5.1",
-    "mocha": "^1.18.2",
+    "mocha": "^2.0.1",
     "vinyl": "^0.4.6"
   },
   "files": [

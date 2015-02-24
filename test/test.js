@@ -20,6 +20,6 @@ describe('gulp-tfs-checkout', function(){
       	done();
       });
 
-    })
-  })
-})
+    });
+  });
+});
