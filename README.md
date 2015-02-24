@@ -12,7 +12,29 @@ $ npm install gulp-tfs-checkout
 ```
 
 ## Usage
+
+Based on the node-package [tfs-unlock](https://www.npmjs.com/package/tfs-unlock).
+
 ```js
+var gulp = require('gulp');
+var tfs = require('gulp-tfs-checkout');
+
+gulp.task('checkout', function() {
+    return gulp.src([
+            'Website/Layout/js/*',
+            'Website/Layout/css/*'
+        ])
+        .pipe(tfs());
+});
+
+// Add 'checkout' task as dependency to other tasks
+
+gulp.task('sass', ['checkout'], function() {
+    ...
+});
+
+// Or run it as a default task
+gulp.task('default', ['checkout', '...', '...', '...']);
 
 ```
 
