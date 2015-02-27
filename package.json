@@ -15,12 +15,12 @@
   "dependencies": {
     "gulp-util": "^3.0.3",
     "through2": "^0.6.3",
-    "tfs-unlock": "^0.3.1"
+    "tfs-unlock": "^0.3.2"
   },
   "devDependencies": {
     "coveralls": "^2.11.2",
     "jshint": "^2.5.1",
-    "mocha": "^2.0.1",
+    "mocha": "^2.1.0",
     "vinyl": "^0.4.6"
   },
   "files": [
