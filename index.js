@@ -27,6 +27,7 @@ module.exports = function (opts) {
         cb();
       }, function () {
         this.emit('error', new gutil.PluginError('gulp-tfs-checkout', null, {fileName: file.path}));
+        cb();
       });
 			
 		} catch (err) {
