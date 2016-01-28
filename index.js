@@ -22,12 +22,15 @@ module.exports = function (opts) {
 
 		try {
 			tfs.init();
-			tfs.checkout([file.path]);
-			gutil.log('Checked out file "' + file.path + '"');
+			tfs.checkout([file.path]).then(function () {
+        gutil.log('Checked out file "' + file.path + '"');
+        cb();
+      }, function () {
+        this.emit('error', new gutil.PluginError('gulp-tfs-checkout', null, {fileName: file.path}));
+      });
+			
 		} catch (err) {
 			this.emit('error', new gutil.PluginError('gulp-tfs-checkout', err, {fileName: file.path}));
 		}
-
-		cb();
 	});
 };
