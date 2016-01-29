@@ -25,8 +25,8 @@ module.exports = function (opts) {
 			tfs.checkout([file.path]).then(function () {
         gutil.log('Checked out file "' + file.path + '"');
         cb();
-      }, function () {
-        this.emit('error', new gutil.PluginError('gulp-tfs-checkout', null, {fileName: file.path}));
+      }, function (error) {
+        gutil.log(gutil.colors.yellow('Warning: Unable to checkout: ' + file.path + ' - Check that this file is under source control and tf.exe works properlly with this file.'));
         cb();
       });
 			
