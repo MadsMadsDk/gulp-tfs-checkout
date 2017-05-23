@@ -1,6 +1,6 @@
 {
   "name": "gulp-tfs-checkout",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Checkout and unlock files from TFS, so that gulp can modify the files without the EPERM error.",
   "main": "index.js",
   "scripts": {
@@ -22,14 +22,14 @@
   "dependencies": {
     "gulp-util": "^3.0.3",
     "through2": "^0.6.3",
-    "tfs-unlock": "^0.5.0"
+    "tfs-unlock": "^0.6.0"
   },
   "devDependencies": {
-    "coveralls": "^2.11.2",
-    "jshint": "^2.5.1",
-    "mocha": "^2.1.0",
-    "vinyl": "^0.4.6",
-    "istanbul": "^0.3.6"
+    "coveralls": "^2.13.1",
+    "jshint": "^2.9.4",
+    "mocha": "^3.4.1",
+    "vinyl": "^2.0.2",
+    "istanbul": "^0.4.5"
   },
   "files": [
     "LICENSE",
