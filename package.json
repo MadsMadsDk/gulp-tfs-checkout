@@ -22,7 +22,7 @@
   "dependencies": {
     "gulp-util": "^3.0.3",
     "through2": "^0.6.3",
-    "tfs-unlock": "^0.6.0"
+    "tfs-unlock": "^0.6.1"
   },
   "devDependencies": {
     "coveralls": "^2.13.1",
