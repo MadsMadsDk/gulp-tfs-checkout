@@ -1,24 +1,22 @@
-var assert = require('assert');
-var tfs = require('tfs-unlock');
-var gutil = require('gulp-util');
-var through = require('through2');
-var prefixer = require('../');
+const assert = require("assert");
+const tfs = require("tfs-unlock");
+const gutil = require("gulp-util");
+const through = require("through2");
+const prefixer = require("../");
 
-describe('gulp-tfs-checkout', function(){
-  it('should return true if file is empty', function(done){
-    
-    var fakeFile = new gutil.File({
-      path: '/this/file/is/empty'
+describe("gulp-tfs-checkout", function() {
+  it("should return true if file is empty", function(done) {
+    const fakeFile = new gutil.File({
+      path: "/this/file/is/empty"
     });
 
-    var testPrefixer = prefixer();
+    const testPrefixer = prefixer();
 
     testPrefixer.write(fakeFile);
 
-    testPrefixer.once('data', function(file) {
+    testPrefixer.once("data", function(file) {
       assert.equal(file.isNull(), true);
       done();
     });
-
   });
 });
