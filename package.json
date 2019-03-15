@@ -25,10 +25,10 @@
     "tfs-unlock": "^0.6.1"
   },
   "devDependencies": {
-    "coveralls": "^2.13.1",
+    "coveralls": "^3.0.3",
     "istanbul": "^0.4.5",
     "jshint": "^2.10.2",
-    "mocha": "^3.4.1",
+    "mocha": "^6.0.2",
     "vinyl": "^2.0.2"
   },
   "files": [
