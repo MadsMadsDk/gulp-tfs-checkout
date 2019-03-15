@@ -8,6 +8,7 @@ var PluginError = gutil.PluginError;
 
 module.exports = function (opts) {
 	opts = opts || {};
+	opts.tfsUnlockSettings = opts.tfsUnlockSettings || {};
 
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
@@ -21,7 +22,7 @@ module.exports = function (opts) {
 		}
 
 		try {
-			tfs.init();
+			tfs.init(opts.tfsUnlockSettings);
 			tfs.checkout([file.path]).then(function () {
         gutil.log('Checked out file "' + file.path + '"');
         cb(null, file);
