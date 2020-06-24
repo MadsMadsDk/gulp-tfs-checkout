@@ -20,11 +20,13 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "through2": "^0.6.3",
-    "tfs-unlock": "^0.6.1"
+    "ansi-colors": "^4.1.1",
+    "fancy-log": "^1.3.3",
+    "plugin-error": "^1.0.1",
+    "tfs-unlock": "^0.6.1",
+    "through2": "^0.6.3"
   },
   "devDependencies": {
-    "gulp-util": "^3.0.3",
     "coveralls": "^3.0.3",
     "istanbul": "^0.4.5",
     "jshint": "^2.10.2",

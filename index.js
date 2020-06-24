@@ -1,8 +1,9 @@
 // through2 is a thin wrapper around node transform streams
-const gutil = require("gulp-util");
+const PluginError = require("plugin-error");
 const through = require("through2");
 const tfs = require("tfs-unlock");
-const PluginError = gutil.PluginError;
+const colors = require("ansi-colors");
+const log = require("fancy-log");
 
 module.exports = function(opts) {
   opts = opts || {};
@@ -15,7 +16,7 @@ module.exports = function(opts) {
     }
 
     if (file.isStream()) {
-      cb(new gutil.PluginError("gulp-tfs-checkout", "Streaming not supported"));
+      cb(new PluginError("gulp-tfs-checkout", "Streaming not supported"));
       return;
     }
 
@@ -23,12 +24,12 @@ module.exports = function(opts) {
       tfs.init(opts.tfsUnlockSettings);
       tfs.checkout([file.path]).then(
         function() {
-          gutil.log('Checked out file "' + file.path + '"');
+          log('Checked out file "' + file.path + '"');
           cb(null, file);
         },
         function(error) {
-          gutil.log(
-            gutil.colors.yellow(
+          log(
+            colors.yellow(
               "Warning: Unable to checkout: " +
                 file.path +
                 " - Check that this file is under source control and tf.exe works properlly with this file."
@@ -40,7 +41,7 @@ module.exports = function(opts) {
     } catch (err) {
       this.emit(
         "error",
-        new gutil.PluginError("gulp-tfs-checkout", err, { fileName: file.path })
+        new PluginError("gulp-tfs-checkout", err, { fileName: file.path })
       );
     }
   });
